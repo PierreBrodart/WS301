@@ -1,0 +1,77 @@
+:root {
+  @function fz($min, $max: $min, $viewport-min: 360, $viewport-max: 1920) {
+    $a: calc(($max - $min) / ($viewport-max / 16 - $viewport-min / 16));
+    $b: calc(-1 * ($viewport-min / 16) * $a + $min);
+    @return clamp(#{$min}rem, #{$b}rem + #{$a * 100}vw, #{$max}rem);
+  }
+  // ===========================================
+  // COULEURS
+  // ===========================================
+
+  // Couleurs primaires
+  --color-primary: #ffe700;
+  --color-primary-light: #fff166;
+
+  // Couleurs secondaires
+  --color-secondary: #54c9e8;
+  --color-secondary-darken: #28b3d7;
+  --color-secondary-light: #aee5f4;
+
+  // Couleurs tertiaires
+  --color-tertiary: #65b32e;
+  --color-tertiary-white: #58a621;
+  --color-tertiary-light: #9ad96d;
+  --color-tertiary-darken: #65b32e;
+
+  // Couleurs neutres
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-light-grey: #9ea3a1;
+  --color-middle-grey: #848a88;
+  --color-extra-light-grey: #eeeef1;
+
+  // Couleurs spéciales
+  --color-blue: #213F73;
+  --color-blue-alt: #1A3476;
+  --color-info: #0073e9;
+
+  --transition: all 0.3s ease-in-out;
+  // ===========================================
+  // TYPOGRAPHIE
+  // ===========================================
+
+  // Famille de police
+  --font-family-primary: 'Montserrat', sans-serif;
+
+  // Tailles de police responsives (mobile -> desktop) basées sur le design Figma
+  --font-size-h1-home-bold: #{fz(2.5, 4)}; // 40px -> 64px
+  --font-size-h1-home-reg: #{fz(2.5, 4)}; // 40px -> 64px
+  --font-size-h1-reg: #{fz(2.25, 3.5)}; // 36px -> 56px
+  --font-size-chiffres-cles: #{fz(2.25, 3.5)}; // 36px -> 56px
+  --font-size-h2: #{fz(2, 4)}; // 28px -> 64px
+  --font-size-h2-wysiwyg: #{fz(2, 2.5)}; // 28px -> 40px
+  --font-size-dates: 36px; // Taille fixe (mobile = desktop selon Figma)
+  --font-size-h3-bold: #{fz(1.5, 2)}; // Taille fixe (mobile = desktop selon Figma)
+  --font-size-h3-reg: 32px; // Taille fixe (mobile = desktop selon Figma)
+  --font-size-h4: #{fz(1.25, 1.375)}; // 20px -> 22px
+  --font-size-h5: 20px; // Taille fixe (mobile = desktop selon Figma)
+  --font-size-txt-courant: 18px; // Taille fixe (mobile = desktop selon Figma)
+  --font-size-txt-courant-bold: 18px; // Taille fixe (mobile = desktop selon Figma)
+  --font-size-infos: 16px; // Taille fixe (mobile = desktop selon Figma)
+  --font-size-details: 14px; // Taille fixe
+  --font-size-tag: 14px; // Taille fixe (mobile = desktop selon Figma)
+  --font-size-h3-home-actu: 24px;
+
+
+  // Poids de police
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+
+  // Line heights
+  --line-height-tight: 0.9;
+  --line-height-normal: 1.2;
+  --line-height-relaxed: 1.6;
+}

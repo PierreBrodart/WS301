@@ -1,0 +1,10 @@
+section.presentation h3{
+  margin-top: 0;
+  &::after{
+    content: url("/images/svg/lorraine.svg");
+    display: inline-block;
+    width: 2.75rem;
+    height: auto;
+    margin-left: 1rem;
+  }
+}

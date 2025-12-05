@@ -1,0 +1,19 @@
+section.news{
+  background-color: #F6F6F6;
+}
+
+.carousel{
+
+  &__item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__img{
+      flex: 1;
+    }
+    &__text{
+      flex: 1;
+    }
+  }
+}
