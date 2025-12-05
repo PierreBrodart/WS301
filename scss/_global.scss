@@ -4,6 +4,7 @@
 }
 
 html, body {
+  overflow-x: hidden;
   --font-color: #0A0050;
 
   color: var(--font-color);

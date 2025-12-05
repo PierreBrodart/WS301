@@ -1,5 +1,5 @@
 :root {
-  --color-primary: #ffe700;
+  --color-primary: #C01F22;
   --color-primary-light: #fff166;
   --color-secondary: #54c9e8;
   --color-secondary-darken: #28b3d7;
@@ -50,6 +50,7 @@
 }
 
 html, body {
+  overflow-x: hidden;
   --font-color: #0A0050;
   color: var(--font-color);
   margin: 0;
@@ -150,6 +151,7 @@ aside {
   width: 100px;
   background-color: #f4f4f4;
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+  z-index: 47;
 }
 aside ul {
   list-style: none;
@@ -175,18 +177,60 @@ section.news {
   background-color: #F6F6F6;
 }
 
+.carousel {
+  display: flex;
+  gap: 3rem;
+}
 .carousel__item {
   display: flex;
-  justify-content: space-between;
+  flex-shrink: 0;
   align-items: center;
 }
 .carousel__item__img {
+  max-width: 40vw;
+  border-radius: 2rem;
   flex: 1;
 }
 .carousel__item__text {
+  max-width: 40vw;
+  display: grid;
+  justify-items: flex-start;
+  gap: 1rem;
+  margin-left: 2rem;
   flex: 1;
+}
+.carousel__item__text .subject {
+  background-color: black;
+  color: white;
+  border-radius: 2rem;
+  padding: 0.5rem;
+}
+.carousel__item__text .cta {
+  display: grid;
+}
+.carousel__item__text .cta::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition: var(--transition);
+}
+.carousel__item__text .cta:hover::after {
+  background-color: var(--color-primary);
+}
+.carousel__item__arrow {
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100vw;
+  background-color: #FFF;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
 }
 
 .parapgraphe {
   color: red;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
