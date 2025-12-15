@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,130 +44,92 @@
         <div aria-label="bouton"></div>
     </header>
 
-    <section class="titre">
-        <h1>Le mémorial <br> Charles de Gaulle </h1>
-        <div class="quick-access">
-            <div class="access-block"> 
-                <a href="https://www.memorial-caen.fr/les-evenements/conferences/"> <img src="https://www.memorial-caen.fr/wp-content/uploads/2023/10/conference.svg" alt="Conférences"> 
-                    <span>Conférences</span> 
-                </a>
-            </div>
-            <div class="access-block"> 
-                <a href="https://www.memorial-caen.fr/votre-visite/acces/"> 
-                    <img src="https://www.memorial-caen.fr/wp-content/uploads/2023/05/location.svg" alt="Accès"> 
-                    <span>Accès</span> 
-                    </a>
-                </div>
-            <div class="access-block"> <a href="https://www.memorial-caen.fr/circuit/journee-jour-j/"> 
-                    <img src="https://www.memorial-caen.fr/wp-content/uploads/2023/10/van-7.svg" alt="Circuits guidés"> 
-                    <span>Circuits guidés</span> 
-                    </a>
-            </div>
-            <div class="access-block"> 
-                <a href="https://www.memorial-caen.fr/votre-visite/tarifs-et-billetterie/"> 
-                    <img src="https://www.memorial-caen.fr/wp-content/uploads/2023/05/tags.svg" alt="Tarifs"> 
-                    <span>Tarifs</span> 
-                </a>
-            </div>
-            <div class="access-block"> 
-                <a href="https://www.memorial-caen.fr/votre-visite/restauration/"> 
-                    <img src="https://www.memorial-caen.fr/wp-content/uploads/2023/05/fork.svg" alt="Restauration"> 
-                    <span>Restauration</span> 
-                </a>
-            </div>
-        </div>
-    </section>
+    <load src="partials/titre.htm"></load>
 
-    <section class="presentation">
-        <h3>Présentation</h3>
-        <p>Bienvenue sur le site du Mémorial Charles de Gaulle, centre d'interprétation historique. Venez découvrir la genèse de ce projet culturel d'envergure, visitez de manière virtuelle les expositions temporaire et permanente, découvrez les événements du Mémorial. Mais trouvez aussi de quoi organiser votre visite en tant qu'individuel, groupe, professionnel ou scolaire, au Mémorial et dans la région. A très bientôt à Colombey-les-deux-églises !</p>
-    </section>
+    <load src="partials/presentation.htm"></load>
 
     <section class="news">
+        <h2>Le titre</h2>
         <div class="carousel" aria-roledescription="carousel">
             <div class="carousel__viewport">
-            <div class="carousel__track">
-            <div class="carousel__item" data-index="0">
-                <div class="carousel__img">
-                    <img src="/images/png/carousel1.png" alt="#">
-                </div>
-                <div class="carousel__item__text">
-                    <div class="subject">Voyages</div>
-                    <h3 class="title">Nouveau général de Gaulle</h3>
-                    <div class="content">Le nouveau général sera Lorem Ipsum dolor sit amet bla bla bla bla bla t’as capté</div>
-                    <div class="date">Du 16 au 25 novembre</div>
-                    <b class="cta">Découvrez la suite</b>
-                </div>
-                <button class="carousel__item__arrow carousel__control carousel__control--next">
-                    <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.66671 10L3.99431e-05 2.33333L2.33337 0L12.3334 10L2.33337 20L3.99431e-05 17.6667L7.66671 10Z" fill="#1D1B20"/>
-                    </svg>
-                </button>
-            </div>
+                <div class="carousel__track">
+                    <div class="carousel__item" data-index="0">
+                        <div class="carousel__img">
+                            <img src="/images/png/carousel1.png" alt="#">
+                        </div>
+                        <div class="carousel__item__text">
+                            <div class="subject">Voyages</div>
+                            <h3 class="title">Nouveau général de Gaulle</h3>
+                            <div class="content">Le nouveau général sera Lorem Ipsum dolor sit amet bla bla bla bla bla t’as capté</div>
+                            <div class="date">Du 16 au 25 novembre</div>
+                            <b class="cta">Découvrez la suite</b>
+                        </div>
+                        <button class="carousel__item__arrow carousel__control carousel__control--next">
+                            <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.66671 10L3.99431e-05 2.33333L2.33337 0L12.3334 10L2.33337 20L3.99431e-05 17.6667L7.66671 10Z" fill="#1D1B20"/>
+                            </svg>
+                        </button>
+                    </div>
 
-            <div class="carousel__item">
-                <div class="carousel__img">
-                    <img src="/images/png/carousel2.png" alt="#">
-                </div>
-                <div class="carousel__item__text">
-                    <div class="subject">Voyages</div>
-                    <h3 class="title">Nouveau général de Gaulle</h3>
-                    <div class="content">Le nouveau général sera Lorem Ipsum dolor sit amet bla bla bla bla bla t’as capté</div>
-                    <div class="date">Du 16 au 25 novembre</div>
-                    <b class="cta">Découvrez la suite</b>
-                </div>
-                <button class="carousel__item__arrow carousel__control carousel__control--next">
-                    <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.66671 10L3.99431e-05 2.33333L2.33337 0L12.3334 10L2.33337 20L3.99431e-05 17.6667L7.66671 10Z" fill="#1D1B20"/>
-                    </svg>
-                </button>
-            </div>
+                    <div class="carousel__item">
+                        <div class="carousel__img">
+                            <img src="/images/png/carousel2.png" alt="#">
+                        </div>
+                        <div class="carousel__item__text">
+                            <div class="subject">Voyages</div>
+                            <h3 class="title">Nouveau général de Gaulle</h3>
+                            <div class="content">Le nouveau général sera Lorem Ipsum dolor sit amet bla bla bla bla bla t’as capté</div>
+                            <div class="date">Du 16 au 25 novembre</div>
+                            <b class="cta">Découvrez la suite</b>
+                        </div>
+                        <button class="carousel__item__arrow carousel__control carousel__control--next">
+                            <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.66671 10L3.99431e-05 2.33333L2.33337 0L12.3334 10L2.33337 20L3.99431e-05 17.6667L7.66671 10Z" fill="#1D1B20"/>
+                            </svg>
+                        </button>
+                    </div>
 
-            <div class="carousel__item">
-                <div class="carousel__img">
-                    <img src="/images/png/carousel3.png" alt="#">
-                </div>
-                <div class="carousel__item__text">
-                    <div class="subject">Voyages</div>
-                    <h3 class="title">Nouveau général de Gaulle</h3>
-                    <div class="content">Le nouveau général sera Lorem Ipsum dolor sit amet bla bla bla bla bla t’as capté</div>
-                    <div class="date">Du 16 au 25 novembre</div>
-                    <b class="cta">Découvrez la suite</b>
-                </div>
-                <button class="carousel__item__arrow carousel__control carousel__control--next">
-                    <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.66671 10L3.99431e-05 2.33333L2.33337 0L12.3334 10L2.33337 20L3.99431e-05 17.6667L7.66671 10Z" fill="#1D1B20"/>
-                    </svg>
-                </button>
-            </div>
+                    <div class="carousel__item">
+                        <div class="carousel__img">
+                            <img src="/images/png/carousel3.png" alt="#">
+                        </div>
+                        <div class="carousel__item__text">
+                            <div class="subject">Voyages</div>
+                            <h3 class="title">Nouveau général de Gaulle</h3>
+                            <div class="content">Le nouveau général sera Lorem Ipsum dolor sit amet bla bla bla bla bla t’as capté</div>
+                            <div class="date">Du 16 au 25 novembre</div>
+                            <b class="cta">Découvrez la suite</b>
+                        </div>
+                        <button class="carousel__item__arrow carousel__control carousel__control--next">
+                            <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.66671 10L3.99431e-05 2.33333L2.33337 0L12.3334 10L2.33337 20L3.99431e-05 17.6667L7.66671 10Z" fill="#1D1B20"/>
+                            </svg>
+                        </button>
+                    </div>
 
-            <div class="carousel__item">
-                <div class="carousel__img">
-                    <img src="/images/png/carousel4.png" alt="#">
+                    <div class="carousel__item">
+                        <div class="carousel__img">
+                            <img src="/images/png/carousel4.png" alt="#">
+                        </div>
+                        <div class="carousel__item__text">
+                            <div class="subject">Voyages</div>
+                            <h3 class="title">Nouveau général de Gaulle</h3>
+                            <div class="content">Le nouveau général sera Lorem Ipsum dolor sit amet bla bla bla bla bla t’as capté</div>
+                            <div class="date">Du 16 au 25 novembre</div>
+                            <b class="cta">Découvrez la suite</b>
+                        </div>
+                        <button class="carousel__item__arrow carousel__control carousel__control--next">
+                            <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.66671 10L3.99431e-05 2.33333L2.33337 0L12.3334 10L2.33337 20L3.99431e-05 17.6667L7.66671 10Z" fill="#1D1B20"/>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-                <div class="carousel__item__text">
-                    <div class="subject">Voyages</div>
-                    <h3 class="title">Nouveau général de Gaulle</h3>
-                    <div class="content">Le nouveau général sera Lorem Ipsum dolor sit amet bla bla bla bla bla t’as capté</div>
-                    <div class="date">Du 16 au 25 novembre</div>
-                    <b class="cta">Découvrez la suite</b>
-                </div>
-                <button class="carousel__item__arrow carousel__control carousel__control--next">
-                    <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.66671 10L3.99431e-05 2.33333L2.33337 0L12.3334 10L2.33337 20L3.99431e-05 17.6667L7.66671 10Z" fill="#1D1B20"/>
-                    </svg>
-                </button>
             </div>
-            </div>
-        </div>
         </div>
     </section>
 
-
-
-    <section class="paragraphe">
-        <p>blablablablablablabla je amoureuxx de ^pierre brodart</p>
-    </section>
+    <load src="partials/actus.htm"/>
 
     <footer>
         <p>&copy; 2025 Mémorial Charles de Gaulle. Tous droits réservés.</p>
@@ -175,7 +137,7 @@
     </footer>
 </main>    
 </div>
-
-    <script src="script/script.js"></script>
+<script src="script/main.js" defer></script>
+<script src="script/script.js" defer></script>
 </body>
 </html>

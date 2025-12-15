@@ -3,16 +3,35 @@ section.titre{
   background-color: #f6f6f6;
   justify-content: space-between;
   height: 15rem;
+  @media (max-width:1240px) {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
 
   .quick-access{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
+    @media (max-width:1024px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
 
     .access-block{
       padding: 1.5rem;
       font-size: 1.2rem;
       text-align: center;
+      @media (max-width:1024px) {
+          padding: 0.5rem;
+          width: 100%;
+          img{
+            height: 3rem;
+          }
+      }
 
       &:hover {
         background-color: white;
