@@ -1,6 +1,7 @@
 :root {
   --color-primary: #C01F22;
   --color-primary-light: #fff166;
+  --color-primary-darken: #ad1c1f;
   --color-secondary: #54c9e8;
   --color-secondary-darken: #28b3d7;
   --color-secondary-light: #aee5f4;
@@ -83,6 +84,11 @@ section {
     padding: 2rem;
   }
 }
+@media (max-width: 40rem) {
+  section {
+    padding: 1rem;
+  }
+}
 
 h1 {
   font-size: 3rem;
@@ -122,11 +128,18 @@ button, input[type=submit], input[type=reset] {
   outline: inherit;
 }
 
+.btn--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 header {
   display: flex;
   position: relative;
   height: 100vh;
   width: 100%;
+    font-weight: var(--font-weight-semibold);
   background: url("/images/png/hero.png") no-repeat center center/cover;
 }
 header nav {
@@ -325,18 +338,21 @@ section.news {
     left: 70vw;
   }
 }
+@media (max-width: 60rem) {
+  .carousel__item__arrow {
+    left: 60vw;
+  }
+}
 
 .parapgraphe {
   color: red;
 }
 
-.actu {
-  padding: 2rem;
-}
 .actu__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  margin-bottom: 2rem;
 }
 .actu__card {
   position: relative;
@@ -397,6 +413,22 @@ section.news {
 .actu__text {
   font-size: 0.95rem;
   line-height: 1.4;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: var(--font-weight-semibold);
+  border-radius: 2rem;
+  min-height: 3.5rem;
+  transition: var(--transition);
+}
+.btn:hover {
+  background-color: var(--color-primary-darken);
 }
 
 /*# sourceMappingURL=main.css.map */

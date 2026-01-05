@@ -76,6 +76,9 @@ section.news{
         bottom: 0;
         left: 70vw;
       }
+      @media (max-width: 60rem) {
+        left: 60vw;
+      }
     }
   }
 }

@@ -33,6 +33,9 @@ section{
   @media (max-width:60rem) {
     padding: 2rem;
   }
+  @media (max-width:40rem) {
+    padding: 1rem;
+  }
 }
 
 h1{
@@ -64,4 +67,10 @@ button, input[type="submit"], input[type="reset"] {
   font: inherit;
   cursor: pointer;
   outline: inherit;
+}
+
+.btn--container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

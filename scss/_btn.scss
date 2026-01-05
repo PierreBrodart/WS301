@@ -1,0 +1,15 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: var(--font-weight-semibold);
+  border-radius: 2rem;
+  min-height: 3.5rem;
+  transition: var(--transition);
+  &:hover {
+    background-color: var(--color-primary-darken);
+  }
+}
