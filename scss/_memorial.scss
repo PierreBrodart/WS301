@@ -1,0 +1,87 @@
+// HERO
+.hero {
+  position: relative;
+  height: 300px;
+  background: url("img/hero.jpg") center / cover no-repeat;
+  color: $light;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  &__content {
+    position: relative;
+    max-width: 700px;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+}
+
+// GRID
+.cards {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+// CARD
+.card {
+  background: $light;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+  &__image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  &__content {
+    padding: 2rem;
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background: $primary;
+    color: $light;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    font-weight: 600;
+
+    &:hover {
+      background: darken($primary, 10%);
+    }
+  }
+}
+
+// RESPONSIVE
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__title {
+    font-size: 2.2rem;
+  }
+}
