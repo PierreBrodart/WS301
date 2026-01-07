@@ -104,11 +104,62 @@
         </div>
     </section>
 
-    <load src="partials/actus.htm"/>
+    <load src="partials/actus.htm"></load>
 
-    <footer>
-        <load src="partials/footer.htm"/>
+    <footer class="footer">
+        <div class="footer__container">
+
+            <!-- Réseaux -->
+            <div class="footer__col footer__col--social">
+                <h3 class="footer__title">Suivez-nous et restez informé</h3>
+
+                <ul class="footer__socials">
+                    <li><a href="#" aria-label="Twitter" class="footer__social">🐦</a></li>
+                    <li><a href="#" aria-label="Facebook" class="footer__social">📘</a></li>
+                    <li><a href="#" aria-label="Instagram" class="footer__social">📸</a></li>
+                    <li><a href="#" aria-label="YouTube" class="footer__social">▶</a></li>
+                    <li><a href="#" aria-label="Tripadvisor" class="footer__social">🦉</a></li>
+                </ul>
+
+                <a href="#" class="footer__contact">Nous contacter</a>
+            </div>
+
+            <!-- Adresse -->
+            <div class="footer__col footer__col--infos">
+                <h3 class="footer__title">Mémorial Charles de Gaulle</h3>
+
+                <p class="footer__text">
+                    52330<br />
+                    Colombey-les-deux-églises<br />
+                    Tél. : 03 25 30 90 80
+                </p>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer__col footer__col--newsletter">
+                <h3 class="footer__title">Newsletter</h3>
+
+                <p class="footer__text">
+                    Inscrivez-vous à notre newsletter pour suivre l’actualité
+                </p>
+
+                <a href="#" class="footer__button">
+                    S’inscrire à la newsletter
+                </a>
+            </div>
+
+            <!-- Logo -->
+            <div class="footer__col footer__col--logo">
+                <img
+                        src="logo-memorial.svg"
+                        alt="Mémorial Charles de Gaulle"
+                        class="footer__logo"
+                />
+            </div>
+
+        </div>
     </footer>
+
 </main>    
 </div>
 <script src="script/main.js" defer></script>
