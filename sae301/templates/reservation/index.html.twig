@@ -1,0 +1,162 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation{% endblock %}
+
+{% block main %}
+    <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    {% include 'accueil/_aside.html.twig' %}
+
+    <section class="reservation-section">
+        <div class="reservation-container">
+            <h1>Réserver votre visite</h1>
+
+            {{ form_start(form) }}
+
+            <div class="form-card">
+                <h3>Type de réservation</h3>
+                <div class="type-choice">
+                    {{ form_row(form.typeReservation) }}
+                </div>
+            </div>
+
+            <div class="form-card">
+                <h3>Date et heure de visite</h3>
+                <div class="date-time-grid">
+                    {{ form_row(form.dateVisite) }}
+                    <div class="heure-container">
+                        {{ form_label(form.heureVisite) }}
+                        {{ form_widget(form.heureVisite) }}
+                    </div>
+                </div>
+            </div>
+
+            <div id="bloc-particulier" class="mode-section form-card">
+                <h3>Choisissez vos billets</h3>
+                <div class="tarifs-grid">
+                    {% for tarif in tarifs %}
+                        <div class="tarif-card" data-price="{{ tarif.prix }}">
+                            <div class="tarif-info">
+                                <strong class="tarif-nom">{{ tarif.nom }}</strong>
+                                {% if tarif.description %}
+                                    <small class="tarif-description">{{ tarif.description }}</small>
+                                {% endif %}
+                                <span class="tarif-prix">{{ tarif.prix }} € / pers.</span>
+                            </div>
+                            <div class="counter">
+                                <button type="button" class="btn-qty minus">−</button>
+                                <span class="qty-val">0</span>
+                                <button type="button" class="btn-qty plus">+</button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div id="bloc-groupe" class="mode-section form-card">
+                <h3>Informations groupe</h3>
+                {{ form_row(form.nomGroupe) }}
+                {{ form_row(form.nombrePlaces, {'label': 'Nombre de visiteurs (Tarif unique 8€/pers)'}) }}
+            </div>
+
+            <div class="form-card">
+                <h3>Vos informations</h3>
+                <div class="grid-2">
+                    {{ form_row(form.nom) }}
+                    {{ form_row(form.prenom) }}
+                </div>
+                {{ form_row(form.email) }}
+            </div>
+
+            <div class="total-box">
+                <div class="total-info">
+                    <span class="total-label">Total</span>
+                    <span class="total-qty"><span id="res-qty">0</span> place(s)</span>
+                </div>
+                <div class="total-amount"><span id="res-total">0.00</span> €</div>
+            </div>
+
+            <div class="btn--container">
+                <button type="submit" class="btn">
+                    Valider la réservation
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+
+            {{ form_end(form) }}
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const radioPart = document.querySelector('input[value="particulier"]');
+            const radioGroup = document.querySelector('input[value="groupe"]');
+            const blocPart = document.getElementById('bloc-particulier');
+            const blocGroup = document.getElementById('bloc-groupe');
+
+            const inputPlaces = document.querySelector('input[name*="[nombrePlaces]"]');
+            const displayQty = document.getElementById('res-qty');
+            const displayTotal = document.getElementById('res-total');
+            const cards = document.querySelectorAll('.tarif-card');
+
+            function updateCalculations() {
+                let totalQ = 0;
+                let totalP = 0;
+
+                if (radioPart && radioPart.checked) {
+                    cards.forEach(c => {
+                        const q = parseInt(c.querySelector('.qty-val').textContent);
+                        totalQ += q;
+                        totalP += q * parseFloat(c.dataset.price);
+                    });
+                    if (inputPlaces) inputPlaces.value = totalQ;
+                } else {
+                    totalQ = parseInt(inputPlaces?.value) || 0;
+                    totalP = totalQ * 8;
+                }
+
+                displayQty.textContent = totalQ;
+                displayTotal.textContent = totalP.toFixed(2);
+            }
+
+            function refreshDisplay() {
+                if (radioPart && radioPart.checked) {
+                    if (blocPart) blocPart.style.display = 'block';
+                    if (blocGroup) blocGroup.style.display = 'none';
+                } else {
+                    if (blocPart) blocPart.style.display = 'none';
+                    if (blocGroup) blocGroup.style.display = 'block';
+                }
+                updateCalculations();
+            }
+
+            cards.forEach(c => {
+                c.querySelector('.plus')?.addEventListener('click', () => {
+                    const val = c.querySelector('.qty-val');
+                    val.textContent = parseInt(val.textContent) + 1;
+                    updateCalculations();
+                });
+                c.querySelector('.minus')?.addEventListener('click', () => {
+                    const val = c.querySelector('.qty-val');
+                    if(parseInt(val.textContent) > 0) {
+                        val.textContent = parseInt(val.textContent) - 1;
+                        updateCalculations();
+                    }
+                });
+            });
+
+            if (inputPlaces) {
+                inputPlaces.addEventListener('input', updateCalculations);
+            }
+
+            document.querySelectorAll('input[name*="[typeReservation]"]').forEach(r => {
+                r.addEventListener('change', refreshDisplay);
+            });
+
+            refreshDisplay();
+        });
+    </script>
+{% endblock %}

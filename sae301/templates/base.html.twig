@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    {% block stylesheets %}
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    {% endblock %}
+
+</head>
+<body>
+{% block nav %}
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Le mémorial</a></li>
+                <li><a href="#">L'actu</a></li>
+                <li><a href="#">Service éducatif</a></li>
+                <li><a href="#">Séminaires</a></li>
+                <li><a href="#">Tourisme</a></li>
+                <li><a href="/reservation">Réserver</a></li>
+            </ul>
+        </nav>
+        <div aria-label="bouton"></div>
+    </header>
+{% endblock %}
+
+{% block main %}
+{% endblock %}
+</body>
+</html>

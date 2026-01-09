@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mémorial — Accueil (WS301){% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        {% include 'accueil/_aside.html.twig' %}
+        <main>
+            {% include 'accueil/_titre.html.twig' %}
+            {% include 'accueil/_presentation.html.twig' %}
+            {% include 'accueil/_news.html.twig' %}
+            {% include 'accueil/_actus.html.twig' %}
+            {% include 'accueil/_footer.html.twig' %}
+        </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-3gJwYp8qR0+3e1Rk2Yq6bZ6bY5Q5b5Y1Y+3mZ6b6Y= " crossorigin="anonymous"></script>
+    <script src="{{ asset('script.js') }}" defer></script>
+{% endblock %}
