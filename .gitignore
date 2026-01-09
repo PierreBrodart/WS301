@@ -1,7 +1,0 @@
-# Ignorer le fichier CSS compilé
-main.css
-
-# Ignorer la source map du CSS
-main.css.map
-
-.idea/
